@@ -1,4 +1,4 @@
-service: echo4
+service: functionOnAws
 
 frameworkVersion: ">=1.2.0 <2.0.0"
 
@@ -7,11 +7,11 @@ provider:
   runtime: java8
   
 package:
-  artifact: build/libs/echo4-0.1-all.jar
+  artifact: build/libs/functionOnAws-0.1-all.jar
 
 functions:
   currentTime:
-    handler: linebot.Handler
+    handler: functionOnAws.Handler
     events:
       - http:
           path: ping

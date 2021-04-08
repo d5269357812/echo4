@@ -1,8 +1,8 @@
 {
   "service": {
-    "service": "echo4",
+    "service": "functionOnAws",
     "serviceObject": {
-      "name": "echo4"
+      "name": "functionOnAws"
     },
     "provider": {
       "stage": "dev",
@@ -33,7 +33,7 @@
           "CurrentTimeLogGroup": {
             "Type": "AWS::Logs::LogGroup",
             "Properties": {
-              "LogGroupName": "/aws/lambda/echo4-dev-currentTime"
+              "LogGroupName": "/aws/lambda/functionOnAws-dev-currentTime"
             }
           },
           "IamRoleLambdaExecution": {
@@ -62,7 +62,7 @@
                       "-",
                       [
                         "dev",
-                        "echo4",
+                        "functionOnAws",
                         "lambda"
                       ]
                     ]
@@ -77,7 +77,7 @@
                         ],
                         "Resource": [
                           {
-                            "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/echo4-dev*:*"
+                            "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/functionOnAws-dev*:*"
                           }
                         ]
                       },
@@ -88,7 +88,7 @@
                         ],
                         "Resource": [
                           {
-                            "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/echo4-dev*:*:*"
+                            "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/functionOnAws-dev*:*:*"
                           }
                         ]
                       }
@@ -101,7 +101,7 @@
                 "Fn::Join": [
                   "-",
                   [
-                    "echo4",
+                    "functionOnAws",
                     "dev",
                     {
                       "Ref": "AWS::Region"
@@ -119,10 +119,10 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/echo4/dev/1616085982420-2021-03-18T16:46:22.420Z/echo4-0.1-all.jar"
+                "S3Key": "serverless/functionOnAws/dev/1617867265988-2021-04-08T07:34:25.988Z/functionOnAws-0.1-all.jar"
               },
-              "FunctionName": "echo4-dev-currentTime",
-              "Handler": "linebot.Handler",
+              "FunctionName": "functionOnAws-dev-currentTime",
+              "Handler": "functionOnAws.Handler",
               "MemorySize": 1024,
               "Role": {
                 "Fn::GetAtt": [
@@ -138,20 +138,20 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "CurrentTimeLambdaVersionpr6iFH8jABiiqTkJIXHqlQnE4kLCkQt1M8cftfRo": {
+          "CurrentTimeLambdaVersionMeRLLcUQV7AUeMRI2QGvg4HX2xilrePRyx7Y6S5TR8": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "CurrentTimeLambdaFunction"
               },
-              "CodeSha256": "usipFBT9ReYRgutIeDACTC/EBQOMDpy8gcfe8X8W67w="
+              "CodeSha256": "uQRcOX92OYCWjoln2Cvg00yWQUdF0t2OKjtHxQH9uP8="
             }
           },
           "ApiGatewayRestApi": {
             "Type": "AWS::ApiGateway::RestApi",
             "Properties": {
-              "Name": "dev-echo4",
+              "Name": "dev-functionOnAws",
               "EndpointConfiguration": {
                 "Types": [
                   "EDGE"
@@ -217,7 +217,7 @@
               "MethodResponses": []
             }
           },
-          "ApiGatewayDeployment1616085980900": {
+          "ApiGatewayDeployment1617867264332": {
             "Type": "AWS::ApiGateway::Deployment",
             "Properties": {
               "RestApiId": {
@@ -276,7 +276,7 @@
           "CurrentTimeLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "CurrentTimeLambdaVersionpr6iFH8jABiiqTkJIXHqlQnE4kLCkQt1M8cftfRo"
+              "Ref": "CurrentTimeLambdaVersionMeRLLcUQV7AUeMRI2QGvg4HX2xilrePRyx7Y6S5TR8"
             }
           },
           "ServiceEndpoint": {
@@ -336,7 +336,7 @@
     "pluginsData": {},
     "functions": {
       "currentTime": {
-        "handler": "linebot.Handler",
+        "handler": "functionOnAws.Handler",
         "events": [
           {
             "http": {
@@ -346,7 +346,7 @@
             }
           }
         ],
-        "name": "echo4-dev-currentTime",
+        "name": "functionOnAws-dev-currentTime",
         "package": {},
         "memory": 1024,
         "timeout": 6,
@@ -358,7 +358,7 @@
     "layers": {}
   },
   "package": {
-    "artifactDirectoryName": "serverless/echo4/dev/1616085982420-2021-03-18T16:46:22.420Z",
-    "artifact": "echo4-0.1-all.jar"
+    "artifactDirectoryName": "serverless/functionOnAws/dev/1617867265988-2021-04-08T07:34:25.988Z",
+    "artifact": "functionOnAws-0.1-all.jar"
   }
 }
