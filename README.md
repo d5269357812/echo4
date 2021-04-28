@@ -1,6 +1,7 @@
-模板
+# description
 
-desc: serverless function on aws lambda
+mictonaut function deploy on was lambda
 
-Language: java for dev , groovy for test
+# function
 
+Hello world
