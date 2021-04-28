@@ -1,6 +1,6 @@
 # description
 
-mictonaut function deploy on was lambda
+Micronaut intergrte Serverless framework deploy to Lambda
 
 # function
 
